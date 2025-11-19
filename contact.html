@@ -1,95 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
- <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Exponab — Global trade in fresh produce &amp; food staples</title>
-
-<!-- site stylesheet -->
-<link rel="stylesheet" href="style.css">
-
-<!-- page-specific styles if any can remain (optional) -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Exponab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="brand-logo">
-        <div class="brand-text">Exponab</div>
-      </div>
-
-      <nav class="main-nav">
-        <a href="/index.html" class="nav-link">Home</a>
-        <a href="/products.html" class="nav-link">Products</a>
-        <a href="/contact.html" class="nav-link active">Contact</a>
-      </nav>
-    </div>
+    <nav class="nav">
+      <a class="nav-logo" href="index.html"><img src="assets/logo/exponab-logo.png" alt="Exponab"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="active"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-hidden="true">☰</button>
+    </nav>
   </header>
 
-  <main>
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p class="muted">Share your product requirements or supply capabilities. Our team will connect with you to explore suitable trade opportunities.</p>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>Share your product requirements or supply capabilities. Our team will connect with you to explore suitable trade opportunities.</p>
 
-      <div class="contact-grid">
-        <div>
-          <h2>Send an enquiry</h2>
+    <section class="contact-grid">
+      <form id="enquiry-form" class="enquiry-form" novalidate>
+        <h2>Send an enquiry</h2>
 
-          <form id="contact-form" class="enquiry-form">
-            <div class="form-row">
-              <label for="name">Your name</label>
-              <input id="name" name="name" placeholder="Full name" required>
-              <label for="company">Company</label>
-              <input id="company" name="company" placeholder="Company (optional)">
-            </div>
+        <label>
+          Your name
+          <input name="name" id="name" placeholder="Full name" required>
+        </label>
 
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="name@company.com" required>
-              <label for="role">Buyer or Supplier</label>
-              <select id="role" name="role">
-                <option>Buyer</option>
-                <option>Supplier</option>
-                <option>Agent</option>
-              </select>
-            </div>
+        <label>
+          Company
+          <input name="company" id="company" placeholder="Company (optional)">
+        </label>
 
-            <div class="form-row full">
-              <label for="message">Message / product details</label>
-              <textarea id="message" name="message" placeholder="Tell us your enquiry (product, origin, volumes, timeline)" rows="6" required></textarea>
-            </div>
+        <label>
+          Email
+          <input name="email" id="email" placeholder="name@company.com" type="email" required>
+        </label>
 
-            <div class="form-row actions">
-              <button id="send-btn" type="submit" class="btn primary gradient-btn">Send enquiry</button>
-              <span class="small-text muted ml">We respond within one business day.</span>
-            </div>
-            <p id="form-status" class="small muted" aria-live="polite"></p>
-          </form>
+        <label>
+          Are you a
+          <select name="role" id="role">
+            <option>Buyer</option>
+            <option>Supplier</option>
+            <option>Agent / Other</option>
+          </select>
+        </label>
+
+        <label>
+          Message / product details
+          <textarea name="message" id="message" rows="6" placeholder="Tell us your enquiry (product, origin, volumes, timeline)" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Send enquiry</button>
+          <span id="form-status" class="form-status" aria-live="polite"></span>
         </div>
 
-        <aside>
-          <h2>Business details</h2>
-          <p><strong>Exponab</strong><br>Dubai, United Arab Emirates<br>Email: info@exponab.com</p>
-          <p class="muted">Office address, trade license and other operational details can be added later.</p>
-        </aside>
-      </div>
-    </div>
+        <p class="hint">This form will open your mail client with a prefilled message if direct server processing isn't available.</p>
+      </form>
+
+      <aside class="business-details">
+        <h2>Business details</h2>
+        <p><strong>Exponab</strong><br>Dubai, United Arab Emirates</p>
+        <p>Email: <a href="mailto:info@exponab.com">info@exponab.com</a></p>
+        <p>Office address, trade license number, and other operational details can be added once all UAE registrations are complete.</p>
+      </aside>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
-        <p class="muted">Dubai-based import & export trading company.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>Email: info@exponab.com</p>
+  <footer class="site-footer minimal">
+    <div class="container">
+      <div class="footer-small">
+        <img src="assets/logo/exponab-logo.png" alt="Exponab">
+        <p>© 2025 Exponab</p>
       </div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
-  <!-- script (defer so DOM exists) -->
-<script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
