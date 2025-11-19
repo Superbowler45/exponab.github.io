@@ -4,90 +4,120 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Exponab — Global trade in fresh produce & food staples</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- favicon etc if available -->
+  <link rel="stylesheet" href="style.css">
+  <!-- favicon if you have one -->
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <div class="logo-wrap">
-        <img src="assets/logo/exponab-logo.png" alt="Exponab" class="logo" id="siteLogo">
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <nav class="nav">
+      <a class="nav-logo" href="index.html" aria-label="Exponab home">
+        <img src="assets/logo/exponab-logo.png" alt="Exponab logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-hidden="true">☰</button>
+    </nav>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Exponab — Global trade in fresh produce & food staples</h1>
-          <p>Sourcing & supplying grapes, pomegranates, onions, turmeric, rice, pulses, meat and more — based in Dubai with flexible cross-border capabilities.</p>
-          <a class="btn" href="products.html">View Products</a>
+      <!-- Big center logo (homepage) -->
+      <div class="hero-content">
+        <img class="hero-logo" src="assets/logo/exponab-logo.png" alt="Exponab">
+        <h1>Exponab — Global trade in fresh produce & food staples</h1>
+        <p class="hero-sub">
+          Sourcing & supplying grapes, pomegranates, onions, turmeric, rice, pulses, meat and more — based in Dubai with flexible cross-border capabilities.
+        </p>
+        <p><a class="btn" href="products.html">View Products</a></p>
+      </div>
+
+      <!-- Centered video card -->
+      <div class="hero-media">
+        <div class="video-card" aria-hidden="false">
+          <video
+            src="assets/videos/exponab-logo-intro.mp4"
+            autoplay muted playsinline loop
+            title="Exponab logo animation"
+          ></video>
         </div>
 
-        <div class="hero-media">
-          <!-- centered logo animation video -->
-          <div class="video-card">
-            <video id="introVideo" src="assets/videos/exponab-logo-intro.mp4" autoplay muted loop playsinline></video>
-          </div>
-          <div class="banner-row">
-            <img src="assets/banners/exponab-banner-1.png" alt="Banner 1" />
-            <img src="assets/banners/exponab-banner-2.png" alt="Banner 2" />
-          </div>
+        <div class="banner-row" aria-hidden="false">
+          <img src="assets/banners/exponab-banner-1.png" alt="" />
+          <img src="assets/banners/exponab-banner-2.png" alt="" />
         </div>
       </div>
     </section>
 
-    <!-- categories -->
-    <section class="categories">
-      <h2>Main categories</h2>
-      <div class="category-cards">
-        <a class="cat" href="products.html#fruits"><img src="assets/icons/fruits.png" alt="Fruits" /> <span>Fruits</span></a>
-        <a class="cat" href="products.html#vegetables"><img src="assets/icons/vegetable.png" alt="Vegetables" /> <span>Vegetables</span></a>
-        <a class="cat" href="products.html#staples"><img src="assets/icons/wheat.png" alt="Staples" /> <span>Staples</span></a>
-        <a class="cat" href="products.html#meat"><img src="assets/icons/meat.png" alt="Meat" /> <span>Meat & Fish</span></a>
+    <!-- Quick intro / numbers or services preview -->
+    <section class="overview">
+      <div class="container">
+        <h2>Our focus</h2>
+        <ul class="bullets">
+          <li>Dubai-based trading and operations company</li>
+          <li>Flexible sourcing from multiple origins</li>
+          <li>Documentation, inspection and logistics support</li>
+        </ul>
       </div>
     </section>
 
-    <!-- quick contact block -->
-    <section class="quick-contact">
-      <div class="quick-inner">
-        <div>
-          <h3>Want to enquire?</h3>
-          <p>Send product requirements — our team will respond within one working day.</p>
-          <a class="btn-outline" href="contact.html">Send an Enquiry</a>
-        </div>
-        <div class="contact-card">
-          <h4>Contact</h4>
-          <p> Dubai, United Arab Emirates</p>
-          <p>Email: <a href="mailto:info@exponab.com">info@exponab.com</a></p>
+    <!-- Small product showcase preview (first 6 aggregated) -->
+    <section class="showcase">
+      <div class="container">
+        <h2>Main categories</h2>
+        <div class="cards">
+          <a class="card" href="products.html#fruits">
+            <img src="assets/products/fruits/pomegranate.png" alt="Fruits">
+            <div class="card-title">Fruits</div>
+          </a>
+          <a class="card" href="products.html#vegetables">
+            <img src="assets/products/vegetables/cabbage.png" alt="Vegetables">
+            <div class="card-title">Vegetables</div>
+          </a>
+          <a class="card" href="products.html#staples">
+            <img src="assets/products/staples/wheat.jpg" alt="Staples">
+            <div class="card-title">Staples</div>
+          </a>
+          <a class="card" href="products.html#meat">
+            <img src="assets/products/meat/chicken-meat.jpg" alt="Meat">
+            <div class="card-title">Meat</div>
+          </a>
+          <a class="card" href="products.html#fish">
+            <img src="assets/products/fish/tilapia-fish.jpg" alt="Fish">
+            <div class="card-title">Fish</div>
+          </a>
+          <a class="card" href="products.html">
+            <div class="card-more">View all products →</div>
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
+    <div class="container footer-grid">
       <div>
-        <img src="assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
+        <h4>E Exponab</h4>
         <p>Dubai-based import & export trading company specialising in fruits and vegetables and related food products.</p>
       </div>
 
       <div>
+        <h4>Discuss your requirement</h4>
+        <p>Share your product requirements or supply capabilities. Our team will connect with you to explore suitable trade opportunities.</p>
+        <p><a class="btn" href="contact.html">Send an enquiry</a></p>
+      </div>
+
+      <div>
         <h4>Quick links</h4>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+        <ul class="footer-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
 
       <div>
@@ -99,7 +129,6 @@
     <div class="bottom-note">© 2025 Exponab. All rights reserved.</div>
   </footer>
 
-  <!-- script (defer so DOM exists) -->
   <script src="script.js" defer></script>
 </body>
 </html>
