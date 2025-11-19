@@ -1,51 +1,289 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Products — Exponab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Exponab Products | Fruits, Vegetables, Staples & Meat</title>
+  <meta
+    name="description"
+    content="Browse Exponab's key product lines across fresh fruits, vegetables, grains, pulses and meat. All items are supplied on enquiry basis."
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a class="nav-logo" href="index.html"><img src="assets/logo/exponab-logo.png" alt="Exponab"></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" aria-hidden="true">☰</button>
-    </nav>
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img
+          src="assets/logo/Exponab Logo.png"
+          alt="Exponab logo"
+          class="brand-logo"
+        />
+        <span class="brand-text">Exponab</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1 id="page-title">Products</h1>
-    <p class="lead">Everything is shown by enquiry — click a product to open details or use the Enquire button.</p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Product portfolio</h1>
+        <p class="hero-subtitle">
+          The lists below show our indicative range by category. All products
+          are sold strictly on enquiry, allowing us to confirm availability,
+          origin, specs and commercial terms.
+        </p>
+      </div>
+    </section>
 
-    <!-- Product navigation anchors -->
-    <div class="product-nav">
-      <a href="#fruits">Fruits</a>
-      <a href="#vegetables">Vegetables</a>
-      <a href="#staples">Staples</a>
-      <a href="#meat">Meat</a>
-      <a href="#fish">Fish</a>
-    </div>
+    <!-- FRUITS -->
+    <section class="section" id="fruits">
+      <div class="container">
+        <div class="section-heading-row">
+          <div class="section-heading-left">
+            <h2 class="section-title">
+              <img src="assets/icons/fruits.png" alt="" class="inline-icon" />
+              Fruits
+            </h2>
+            <p class="section-intro">
+              Focus on grapes, pomegranates, citrus, apples and seasonal
+              tropicals. Additional items can be sourced on request.
+            </p>
+          </div>
+          <a href="contact.html#enquiry" class="btn ghost small">
+            Enquire for fruits
+          </a>
+        </div>
 
-    <!-- Product containers inserted via JS -->
-    <div id="products-root"></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/products/fruits/Pomegranate.png" alt="Pomegranate" />
+            <h3>Pomegranate</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Red Globe Grapes.png" alt="Red Globe Grapes" />
+            <h3>Red Globe Grapes</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Green Grapes.png" alt="Green Grapes" />
+            <h3>Green Grapes</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Black Grapes (Seedless).png" alt="Black Grapes" />
+            <h3>Black Seedless Grapes</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Apple.png" alt="Apple" />
+            <h3>Apples (multiple origins)</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Alphonso Mango.png" alt="Alphonso Mango" />
+            <h3>Alphonso & other mangoes</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Orange.png" alt="Orange" />
+            <h3>Oranges & citrus</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/fruits/Watermelon.png" alt="Watermelon" />
+            <h3>Watermelon & muskmelon</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEGETABLES -->
+    <section class="section section-muted" id="vegetables">
+      <div class="container">
+        <div class="section-heading-row">
+          <div class="section-heading-left">
+            <h2 class="section-title">
+              <img src="assets/icons/vegetable.png" alt="" class="inline-icon" />
+              Vegetables
+            </h2>
+            <p class="section-intro">
+              Onions, chillies, gourds and exotics for wholesale, retail and
+              HoReCa.
+            </p>
+          </div>
+          <a href="contact.html#enquiry" class="btn ghost small">
+            Enquire for vegetables
+          </a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/products/vegetables/Onion.png" alt="Onion" />
+            <h3>Onion</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Coriander Leaf.png" alt="Coriander Leaf" />
+            <h3>Coriander Leaf</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Green Zucchini.png" alt="Green Zucchini" />
+            <h3>Green & Yellow Zucchini</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Brocolli.png" alt="Broccoli" />
+            <h3>Broccoli & exotics</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Baby Corn.png" alt="Baby Corn" />
+            <h3>Baby Corn</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Cabbage.png" alt="Cabbage" />
+            <h3>Cabbage & Chinese cabbage</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/White Pumpkin.png" alt="Pumpkin" />
+            <h3>Pumpkins & gourds</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/vegetables/Shiitake Mushrooms.png" alt="Mushrooms" />
+            <h3>Specialty mushrooms</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAPLES -->
+    <section class="section" id="staples">
+      <div class="container">
+        <div class="section-heading-row">
+          <div class="section-heading-left">
+            <h2 class="section-title">
+              <img src="assets/icons/wheat.png" alt="" class="inline-icon" />
+              Staples & pulses
+            </h2>
+            <p class="section-intro">
+              Key dry lines supplied in bulk for packing and distribution.
+            </p>
+          </div>
+          <a href="contact.html#enquiry" class="btn ghost small">
+            Enquire for staples
+          </a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/products/staples/Basmati Rice.jpg" alt="Basmati Rice" />
+            <h3>Basmati rice</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/staples/Non‐Basmati milled rice.jpg" alt="Non Basmati Rice" />
+            <h3>Non-Basmati milled rice</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/staples/Wheat.jpg" alt="Wheat" />
+            <h3>Wheat</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/staples/Millet.jpg" alt="Millet" />
+            <h3>Millets</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/staples/Tamarind.png" alt="Tamarind" />
+            <h3>Tamarind</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/staples/Sugarcane.png" alt="Sugarcane" />
+            <h3>Sugarcane (select formats)</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEAT -->
+    <section class="section section-muted" id="meat">
+      <div class="container">
+        <div class="section-heading-row">
+          <div class="section-heading-left">
+            <h2 class="section-title">
+              <img src="assets/icons/meat.png" alt="" class="inline-icon" />
+              Meat & seafood
+            </h2>
+            <p class="section-intro">
+              Meat and seafood lines are handled with additional checks and
+              documentation, and are always subject to approval.
+            </p>
+          </div>
+          <a href="contact.html#enquiry" class="btn ghost small">
+            Enquire for meat & seafood
+          </a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/products/meat/Chixken Meat.jpg" alt="Chicken Meat" />
+            <h3>Chicken meat</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/meat/Cuttlefish.jpg" alt="Cuttlefish" />
+            <h3>Cuttlefish</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/meat/Indian Carp.jpg" alt="Indian Carp" />
+            <h3>Indian carp</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/meat/Tilapia Fish.jpg" alt="Tilapia" />
+            <h3>Tilapia fish</h3>
+          </article>
+          <article class="product-card">
+            <img src="assets/products/meat/Mackerel Fish.jpg" alt="Mackerel" />
+            <h3>Mackerel fish</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-dark cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Need a customised product list?</h2>
+          <p>
+            Share your required items, packaging preferences, origins and
+            delivery windows. We will revert with workable options.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html#enquiry" class="btn primary">Send enquiry</a>
+          <a href="contact.html" class="btn ghost">Other contact options</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer minimal">
-    <div class="container">
-      <div class="footer-small">
-        <img src="assets/logo/exponab-logo.png" alt="Exponab">
-        <p>© 2025 Exponab</p>
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p class="small-text">
+        © <span id="year">2025</span> Exponab. All rights reserved.
+      </p>
     </div>
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
