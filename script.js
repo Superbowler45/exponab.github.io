@@ -1,130 +1,210 @@
-/* script.js - dynamic product rendering + contact form handling */
+/* script.js - site behavior, products rendering, form handling */
 
 /* -------------------------
-   Products data
-   - The `image` path assumes files are under:
-     assets/products/<category>/<filename>
-   - filenames are normalized (lowercase, dashes)
---------------------------*/
-const products = [
-  // FRUITS
-  { id: 'apple', title: 'Apple', category: 'fruits', image: 'assets/products/fruits/apple.png' },
-  { id: 'alphonso-mango', title: 'Alphonso Mango', category: 'fruits', image: 'assets/products/fruits/alphonso-mango.png' },
-  { id: 'banana', title: 'Banana', category: 'fruits', image: 'assets/products/fruits/banana.png' },
-  { id: 'pineapple', title: 'Pineapple', category: 'fruits', image: 'assets/products/fruits/pineapple.png' },
-  { id: 'pomegranate', title: 'Pomegranate', category: 'fruits', image: 'assets/products/fruits/pomegranate.png' },
-  { id: 'guava', title: 'Guava', category: 'fruits', image: 'assets/products/fruits/guava.png' },
-  { id: 'papaya', title: 'Papaya', category: 'fruits', image: 'assets/products/fruits/papaya.png' },
-  { id: 'passion-fruit', title: 'Passion Fruit', category: 'fruits', image: 'assets/products/fruits/passion-fruit.png' },
-  { id: 'muskmelon', title: 'Muskmelon', category: 'fruits', image: 'assets/products/fruits/muskmelon.png' },
-  { id: 'watermelon', title: 'Watermelon', category: 'fruits', image: 'assets/products/fruits/watermelon.png' },
-  { id: 'grapes-green', title: 'Green Grapes', category: 'fruits', image: 'assets/products/fruits/green-grapes.png' },
-  { id: 'grapes-black', title: 'Black Grapes (seedless)', category: 'fruits', image: 'assets/products/fruits/black-grapes-(seedless).png' },
-  { id: 'strawberries', title: 'Strawberries', category: 'fruits', image: 'assets/products/fruits/strawberries.png' },
-  { id: 'lychee', title: 'Lychee', category: 'fruits', image: 'assets/products/fruits/lychee.png' },
-  { id: 'kiwi', title: 'Kiwi', category: 'fruits', image: 'assets/products/fruits/kiwi.png' },
-  // VEGETABLES
-  { id: 'onion', title: 'Onion', category: 'vegetables', image: 'assets/products/vegetables/onion.png' },
-  { id: 'tomato', title: 'Tomato', category: 'vegetables', image: 'assets/products/vegetables/tomato.png' },
-  { id: 'green-chilli', title: 'Green Chilli', category: 'vegetables', image: 'assets/products/vegetables/green-chilli.png' },
-  { id: 'cucumber', title: 'Cucumber', category: 'vegetables', image: 'assets/products/vegetables/cucumber.png' },
-  { id: 'bottle-gourd', title: 'Bottle Gourd', category: 'vegetables', image: 'assets/products/vegetables/bottle-gourd.png' },
-  { id: 'bitter-gourd', title: 'Bitter Gourd', category: 'vegetables', image: 'assets/products/vegetables/bitter-gourd.png' },
-  { id: 'ridge-gourd', title: 'Ridge Gourd', category: 'vegetables', image: 'assets/products/vegetables/ridge-gourd.png' },
-  { id: 'sponge-gourd', title: 'Sponge Gourd', category: 'vegetables', image: 'assets/products/vegetables/sponge-gourd.png' },
-  { id: 'pointed-gourd', title: 'Pointed Gourd', category: 'vegetables', image: 'assets/products/vegetables/pointed-gourd.png' },
-  { id: 'yellow-zucchini', title: 'Yellow Zucchini', category: 'vegetables', image: 'assets/products/vegetables/yellow-zucchini.png' },
-  { id: 'green-zucchini', title: 'Green Zucchini', category: 'vegetables', image: 'assets/products/vegetables/green-zucchini.png' },
-  { id: 'brocolli', title: 'Brocolli', category: 'vegetables', image: 'assets/products/vegetables/brocolli.png' },
-  { id: 'cauliflower', title: 'Cauliflower', category: 'vegetables', image: 'assets/products/vegetables/cauliflower.png' },
-  // STAPLES
-  { id: 'basmati-rice', title: 'Basmati rice', category: 'staples', image: 'assets/products/staples/basmati-rice.jpg' },
-  { id: 'non-basmati-milled-rice', title: 'Non-Basmati milled rice', category: 'staples', image: 'assets/products/staples/non‐basmati-milled-rice.jpg' },
-  { id: 'wheat', title: 'Wheat', category: 'staples', image: 'assets/products/staples/wheat.jpg' },
-  { id: 'millet', title: 'Millets', category: 'staples', image: 'assets/products/staples/millet.jpg' },
-  { id: 'sugarcane', title: 'Sugarcane', category: 'staples', image: 'assets/products/staples/sugarcane.png' },
-  // MEAT & FISH
-  { id: 'chicken', title: 'Chicken', category: 'meat', image: 'assets/products/meat/chicken-meat.jpg' },
-  { id: 'mutton', title: 'Mutton', category: 'meat', image: 'assets/products/meat/mutton.jpg' },
-  { id: 'tilapia', title: 'Tilapia', category: 'meat', image: 'assets/products/meat/tilapia-fish.jpg' },
-  { id: 'mackerel', title: 'Mackerel', category: 'meat', image: 'assets/products/meat/mackerel-fish.jpg' },
-  { id: 'cuttlefish', title: 'Cuttlefish', category: 'meat', image: 'assets/products/meat/cuttlefish.jpg' },
-];
+   Products array (grouped)
+   Update paths if your folders differ.
+   ------------------------- */
+const products = {
+  fruits: [
+    "alphonso-mango.png",
+    "apple.png",
+    "avocado.png",
+    "banana.png",
+    "black-grapes-(seedless).png",
+    "cavendish-banana.png",
+    "chikoo.png",
+    "dragon-fruit.png",
+    "gooseberry.png",
+    "green-grapes.png",
+    "guava.png",
+    "kashmiri-apple.png",
+    "kiwi.png",
+    "lemon.png",
+    "longan.png",
+    "lychee.png",
+    "mangosteen.png",
+    "muskmelon.png",
+    "orange.png",
+    "papaya.png",
+    "passion Fruit.png",
+    "pear.png",
+    "pineapple.png",
+    "pomegranate.png",
+    "rambutan.png",
+    "raw-mango.png",
+    "red-banana.jpg",
+    "red-globe-grapes.png",
+    "star-fruit.png",
+    "strawberries.png",
+    "sugarcane.png",
+    "sweet-lime.png",
+    "tamarind.png",
+    "thompson-seedless-grapes.png",
+    "watermelon.png"
+  ],
+  vegetables: [
+    "artichoke.png",
+    "asparagus.png",
+    "baby-corn.png",
+    "bitter-gourd.png",
+    "bok-choy.png",
+    "bottle-gourd.png",
+    "brocolli.png",
+    "brussels-sprouts.png",
+    "button-mushroom.png",
+    "cabbage.png",
+    "cauliflower.png",
+    "celery.png",
+    "chinnese-cabbage.png",
+    "coriander-leaf.png",
+    "cucumber.png",
+    "fennel-bulb.png",
+    "garlic-whole-big-(white).png",
+    "green-zucchini.png",
+    "ivy-gourd.png",
+    "king-oyester-mushroom.png",
+    "knol-khol.png",
+    "leeks.png",
+    "maitake-(hen-of-the-woods).png",
+    "onion.png",
+    "oyester-mushroom.png",
+    "pointed-gourd.png",
+    "red-pumpkin.png",
+    "ridge-gourd.png",
+    "shiitake-mushrooms.png",
+    "snake-gourd.png",
+    "sponge-gourd.png",
+    "white-pumpkin.png",
+    "yellow-zucchini.png"
+  ],
+  staples: [
+    "basmati-rice.jpg",
+    "non‐basmati-milled-rice.jpg",
+    "wheat.jpg",
+    "millet.jpg"
+  ],
+  meat: [
+    "chicken-meat.jpg"
+  ],
+  fish: [
+    "cuttlefish.jpg",
+    "indian-carp.jpg",
+    "mackerel-fish.jpg",
+    "tilapia-fish.jpg"
+  ]
+};
 
-/* ---------- rendering logic ---------- */
-function createCard(p) {
-  const a = document.createElement('div');
-  a.className = 'product-card';
-  const img = document.createElement('img');
-  img.loading = 'lazy';
-  img.alt = p.title;
-  img.src = p.image;
-  img.onerror = () => {
-    img.src = 'assets/products/placeholder.png'; // add placeholder image to assets for safety
-  };
-  const title = document.createElement('h4');
-  title.textContent = p.title;
-  const el = document.createElement('div');
-  el.appendChild(img);
-  el.appendChild(title);
-  return el;
+/* -------------------------
+   DOM helpers & product rendering
+   ------------------------- */
+
+function createProductCard(category, filename) {
+  // Friendly title from filename
+  const title = filename.replace(/[-_]/g, " ").replace(/\.(png|jpg|jpeg|gif)$/i, "");
+  const imgPath = `assets/products/${category}/${filename}`;
+  const a = document.createElement("a");
+  a.className = "product-card";
+  a.href = `mailto:info@exponab.com?subject=Enquiry about ${encodeURIComponent(title)}&body=Hello%0A%0AI would like to enquire about ${encodeURIComponent(title)}.%0A%0ARegards,`;
+  a.innerHTML = `
+    <img loading="lazy" src="${imgPath}" alt="${title}" onerror="this.style.opacity=0.65; this.nextElementSibling && (this.nextElementSibling.textContent='Image missing')">
+    <div class="product-title">${title}</div>
+    <div class="product-meta">Category: ${category}</div>
+  `;
+  return a;
 }
 
-function renderProducts() {
-  const fruitsGrid = document.getElementById('fruitsGrid');
-  const vegGrid = document.getElementById('vegetablesGrid');
-  const staplesGrid = document.getElementById('staplesGrid');
-  const meatGrid = document.getElementById('meatGrid');
+function renderProductsRoot() {
+  const root = document.getElementById("products-root");
+  if (!root) return;
+  root.innerHTML = "";
+  Object.keys(products).forEach(category => {
+    const sec = document.createElement("section");
+    sec.className = "products-section";
+    sec.id = category;
+    sec.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+    const grid = document.createElement("div");
+    grid.className = "products-grid";
 
-  if (!fruitsGrid) return; // only on products page
+    products[category].forEach(fn => {
+      grid.appendChild(createProductCard(category, fn));
+    });
 
-  products.forEach(p => {
-    const card = createCard(p);
-    if (p.category === 'fruits') fruitsGrid.appendChild(card);
-    else if (p.category === 'vegetables') vegGrid.appendChild(card);
-    else if (p.category === 'staples') staplesGrid.appendChild(card);
-    else if (p.category === 'meat') meatGrid.appendChild(card);
+    sec.appendChild(grid);
+    root.appendChild(sec);
   });
 }
 
-/* --------- Contact form handling (simple) --------- */
-function handleContactForm() {
-  // On the contact page we expect a <form id="contactForm"> with fields:
-  // name, company, email, role (buyer/supplier), message, submit
-  const form = document.getElementById('contactForm');
+/* -------------------------
+   Contact form handling
+   ------------------------- */
+
+function initContactForm() {
+  const form = document.getElementById("enquiry-form");
   if (!form) return;
+  const status = document.getElementById("form-status");
 
-  form.addEventListener('submit', async (ev) => {
+  form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
+    status.textContent = "";
 
-    const name = form.querySelector('[name="name"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const message = form.querySelector('[name="message"]').value.trim();
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
+    const message = form.querySelector("#message").value.trim();
+    const company = form.querySelector("#company").value.trim();
+    const role = form.querySelector("#role").value;
 
     if (!name || !email || !message) {
-      alert('Please complete name, email and message.');
+      status.textContent = "Please fill name, email and message.";
       return;
     }
 
-    // If you have a backend endpoint, replace this with a fetch() POST to it.
-    // For now: mailto fallback:
-    const subject = encodeURIComponent('Product enquiry from ' + name);
-    const body = encodeURIComponent(`Name: ${name}\nCompany: ${form.querySelector('[name="company"]').value}\nRole: ${form.querySelector('[name="role"]').value}\n\nMessage:\n${message}`);
-    // open mail client
-    window.location.href = `mailto:info@exponab.com?subject=${subject}&body=${body}`;
+    // Build mailto fallback
+    const subject = `Enquiry from ${name} (${company || role})`;
+    const bodyLines = [
+      `Name: ${name}`,
+      `Company: ${company}`,
+      `Role: ${role}`,
+      `Email: ${email}`,
+      ``,
+      `Message:`,
+      message
+    ];
+    const mailto = `mailto:info@exponab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
-    // show basic confirmation (also useful if client email blocked)
-    setTimeout(() => {
-      alert('If your mail client did not open, please send the message to info@exponab.com directly. We will respond within one working day.');
-    }, 500);
+    // Attempt to use fetch to a server endpoint (not present) - if it fails, fallback to mailto.
+    // Since GitHub Pages has no backend, the mailto fallback is the reliable method.
+    try {
+      // Example: if later you add a server endpoint, change this to real endpoint
+      // let resp = await fetch('/api/enquiry', {method:'POST', body: JSON.stringify({name,email,company,role,message}), headers:{'content-type':'application/json'}});
+      // if (resp.ok) { status.textContent = 'Message sent — we will reply within one business day.'; form.reset(); return; }
+      // fallback to mailto now:
+      window.location.href = mailto;
+      status.textContent = "If your email client didn't open, please email info@exponab.com manually.";
+    } catch (err) {
+      // fallback
+      window.location.href = mailto;
+      status.textContent = "If your email client didn't open, please email info@exponab.com manually.";
+    }
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderProducts();
-  handleContactForm();
+/* -------------------------
+  Small nav toggle
+  ------------------------- */
+function initNavToggle() {
+  const btn = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  if (!btn || !navLinks) return;
+  btn.addEventListener("click", () => {
+    navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+  });
+}
 
-  // ensure logo is visible and not tiny
-  const logo = document.getElementById('siteLogo') || document.getElementById('siteLogo2');
-  if (logo) logo.style.display = 'block';
+/* -------------------------
+   Init on DOMContentLoaded
+   ------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  renderProductsRoot();
+  initContactForm();
+  initNavToggle();
 });
