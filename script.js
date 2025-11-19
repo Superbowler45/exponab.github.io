@@ -1,46 +1,62 @@
-// script.js - small helpers for form UX
-document.addEventListener('DOMContentLoaded', function(){
-  const form = document.getElementById('contact-form');
-  if(!form) return;
+// script.js
 
-  const statusEl = document.getElementById('form-status');
-  const btn = document.getElementById('send-btn');
+document.addEventListener('DOMContentLoaded', function () {
+  // form handler
+  const form = document.getElementById('enquiryForm');
+  const status = document.getElementById('formStatus');
 
-  function showStatus(msg){
-    if(statusEl) statusEl.textContent = msg;
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = '';
+
+      const name = (form.querySelector('#name') || {}).value || '';
+      const email = (form.querySelector('#email') || {}).value || '';
+      const company = (form.querySelector('#company') || {}).value || '';
+      const role = (form.querySelector('#role') || {}).value || '';
+      const message = (form.querySelector('#message') || {}).value || '';
+
+      if (!name.trim() || !email.trim() || !message.trim()) {
+        status.textContent = 'Please fill required fields.';
+        return;
+      }
+
+      // simple email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        status.textContent = 'Please enter a valid email.';
+        return;
+      }
+
+      // Construct mailto fallback
+      const to = 'info@exponab.com';
+      const subject = encodeURIComponent('Website enquiry from ' + name);
+      const bodyLines = [
+        `Name: ${name}`,
+        `Company: ${company}`,
+        `Role: ${role}`,
+        `Email: ${email}`,
+        '',
+        'Message:',
+        message
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+
+      // Try to open mail client (this is fallback)
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+      status.textContent = 'Opening email client...';
+      setTimeout(() => {
+        status.textContent = 'If your email client did not open, please send an email to info@exponab.com';
+      }, 3000);
+    });
   }
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    const name = (form.querySelector('#name') || {}).value?.trim() || '';
-    const email = (form.querySelector('#email') || {}).value?.trim() || '';
-    const message = (form.querySelector('#message') || {}).value?.trim() || '';
-
-    if(!name || !email || !message){
-      showStatus('Please fill required fields: name, email and message.');
-      return;
-    }
-
-    // simple email format check
-    const emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!emailOK){
-      showStatus('Please enter a valid email address.');
-      return;
-    }
-
-    // visual feedback
-    btn.disabled = true;
-    const prevText = btn.textContent;
-    btn.textContent = 'Sending...';
-
-    // NOTE: currently this is a client-side demo only.
-    // Replace with fetch() to your API or form service later.
-    setTimeout(() => {
-      showStatus('Thank you — your enquiry has been recorded. We will respond shortly.');
-      form.reset();
-      btn.disabled = false;
-      btn.textContent = prevText;
-    }, 900);
-  });
+  // if video missing, hide video player gracefully
+  const video = document.querySelector('.logo-video');
+  if (video && video.querySelector('source')) {
+    // nothing — will show if source present
+  } else if (video) {
+    video.style.display = 'none';
+  }
 });
