@@ -1,144 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Exponab for trade enquiries related to fresh fruits, vegetables and food product imports and exports." />
-  <title>Contact Exponab | Trade Enquiries</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Exponab</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <div class="logo">
-        <span class="logo-mark">E</span>
-        <span class="logo-text">Exponab</span>
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="brand-logo">
+        <div class="brand-text">Exponab</div>
       </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html" class="active">Contact</a>
+
+      <nav class="main-nav">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/products.html" class="nav-link">Products</a>
+        <a href="/contact.html" class="nav-link active">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Contact Us</h1>
-        <p class="hero-subtitle">
-          Share your product requirements or supply capabilities. Our team will connect with you 
-          to explore suitable trade opportunities.
-        </p>
-      </div>
-    </section>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="muted">Share your product requirements or supply capabilities. Our team will connect with you to explore suitable trade opportunities.</p>
 
-    <section class="section">
-      <div class="container two-col">
-        
-        <!-- Contact Form -->
+      <div class="contact-grid">
         <div>
-          <h2 class="section-title">Send an enquiry</h2>
-          <!-- No backend needed, uses mailto -->
-          <form class="contact-form" method="post" action="mailto:info@exponab.com" enctype="text/plain">
-            <label>
-              Your name
-              <input type="text" name="Name" required />
-            </label>
-            <label>
-              Company
-              <input type="text" name="Company" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="Email" required />
-            </label>
-            <label>
-              Are you a buyer or a supplier?
-              <select name="Type">
-                <option value="Buyer">Buyer</option>
-                <option value="Supplier">Supplier</option>
-                <option value="Other">Other</option>
+          <h2>Send an enquiry</h2>
+
+          <form id="contact-form" class="enquiry-form">
+            <div class="form-row">
+              <label for="name">Your name</label>
+              <input id="name" name="name" placeholder="Full name" required>
+              <label for="company">Company</label>
+              <input id="company" name="company" placeholder="Company (optional)">
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@company.com" required>
+              <label for="role">Buyer or Supplier</label>
+              <select id="role" name="role">
+                <option>Buyer</option>
+                <option>Supplier</option>
+                <option>Agent</option>
               </select>
-            </label>
-            <label>
-              Message
-              <textarea name="Message" rows="5" placeholder="Tell us about your requirement or product range."></textarea>
-            </label>
-            <button type="submit" class="btn primary full-width">Send message</button>
+            </div>
+
+            <div class="form-row full">
+              <label for="message">Message / product details</label>
+              <textarea id="message" name="message" placeholder="Tell us your enquiry (product, origin, volumes, timeline)" rows="6" required></textarea>
+            </div>
+
+            <div class="form-row actions">
+              <button id="send-btn" type="submit" class="btn primary gradient-btn">Send enquiry</button>
+              <span class="small-text muted ml">We respond within one business day.</span>
+            </div>
+            <p id="form-status" class="small muted" aria-live="polite"></p>
           </form>
-
-          <p class="small-text" style="margin-top: 0.7rem;">
-            This form sends messages directly to your email inbox.  
-            Later, you can upgrade it to a CRM or backend system if needed.
-          </p>
         </div>
 
-        <!-- Contact Details -->
-        <div>
-          <h2 class="section-title">Business details</h2>
-          <p>
-            <strong>Exponab</strong><br />
-            Dubai, United Arab Emirates<br />
-          </p>
-          <p>
-            <strong>Email:</strong> info@exponab.com<br />
-            <!-- You may add phone number later -->
-          </p>
-          <p class="small-text">
-            Office address, trade license number, and other operational details can be added 
-            once all UAE registrations are complete.
-          </p>
-        </div>
-
+        <aside>
+          <h2>Business details</h2>
+          <p><strong>Exponab</strong><br>Dubai, United Arab Emirates<br>Email: info@exponab.com</p>
+          <p class="muted">Office address, trade license and other operational details can be added later.</p>
+        </aside>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="logo footer-logo">
-          <span class="logo-mark">E</span>
-          <span class="logo-text">Exponab</span>
-        </div>
-        <p class="small-text">
-          Dubai-based import & export trading company specialising in fruits and vegetables 
-          and related food products.
-        </p>
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
+        <p class="muted">Dubai-based import & export trading company.</p>
       </div>
-
-      <div>
-        <h4>Quick links</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
+      <div class="footer-col">
         <h4>Contact</h4>
-        <p class="small-text">
-          Dubai, United Arab Emirates<br />
-          Email: info@exponab.com
-        </p>
+        <p>Email: info@exponab.com</p>
       </div>
     </div>
-
-    <div class="container footer-bottom">
-      <p class="small-text">© <span id="year">2025</span> Exponab. All rights reserved.</p>
-    </div>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
   </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>
