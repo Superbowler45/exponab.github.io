@@ -3,120 +3,174 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Exponab — Dubai | Fresh produce & food staples</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Exponab — Global trade in fresh produce & food staples</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
-<body class="home">
+<body class="site">
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="brand-logo">
-        <div class="brand-text">Exponab</div>
-      </div>
-
-      <nav class="main-nav">
-        <a href="/index.html" class="nav-link active">Home</a>
-        <a href="/products.html" class="nav-link">Products</a>
-        <a href="/contact.html" class="nav-link">Contact</a>
+      <a class="brand" href="/index.html" aria-label="Exponab home">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" id="site-logo">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/index.html" class="nav-item">Home</a>
+        <a href="/products.html" class="nav-item">Products</a>
+        <a href="/services.html" class="nav-item">Services</a>
+        <a href="/about.html" class="nav-item">About</a>
+        <a href="/contact.html" class="nav-item">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO / Banner -->
-  <section class="hero">
-    <div class="hero-inner container">
-      <img src="/assets/banners/exponab-banner-1.png" alt="Exponab banner" class="hero-banner">
-      <!-- Large centered hero logo (visible) -->
-      <img src="/assets/logo/exponab-logo.png" alt="Exponab logo" class="hero-logo">
-      <div class="hero-copy">
-        <h1>Exponab — Global trade in fresh produce & food staples</h1>
-        <p class="lead">Sourcing & supplying grapes, pomegranates, onions, turmeric, rice, pulses, meat and more — based in Dubai with flexible cross-border capabilities.</p>
-        <a href="/products.html" class="btn primary">View Products</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Exponab — Global trade in fresh produce & food staples</h1>
+          <p class="lead">
+            Sourcing & supplying grapes, pomegranates, onions, turmeric, rice, pulses, meat and more — based in Dubai with flexible cross-border capabilities.
+          </p>
+          <p><a href="/products.html" class="btn">View Products / Enquire</a></p>
+        </div>
 
-  <!-- Logo video (centered, minimal) -->
-  <section class="section">
-    <div class="container center-video">
-      <div class="video-card logo-only">
-        <!-- If video is not uploaded to repo, replace the <video> with an <img> or embed from YouTube -->
-        <video controls preload="metadata" poster="/assets/banners/exponab-banner-2.png">
-          <source src="/assets/videos/exponab-logo-intro.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="hero-right">
+          <!-- Large centered logo and a short video player -->
+          <div class="logo-intro">
+            <img src="/assets/logo/exponab-logo.png" alt="Exponab logo" class="hero-logo" />
+            <video controls preload="metadata" class="logo-video" aria-label="Exponab logo video">
+              <source src="/assets/videos/exponab-logo-intro.mp4" type="video/mp4" />
+              <!-- If video missing, hide player with CSS fallback -->
+            </video>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Product categories quick -->
-  <section class="section">
-    <div class="container">
+    <!-- Categories -->
+    <section class="container categories">
       <h2>Main categories</h2>
-      <div class="category-grid">
-        <a class="category-card" href="/products.html#fruits">
-          <img src="/assets/icons/fruits.png" alt="Fruits">
-          <div class="cat-title">Fruits</div>
+      <div class="grid categories-grid">
+        <a class="card" href="/products.html#fruits">
+          <img src="/assets/icons/fruits.png" alt="" class="card-icon">
+          <div class="card-title">Fruits</div>
         </a>
-
-        <a class="category-card" href="/products.html#vegetables">
-          <img src="/assets/icons/vegetable.png" alt="Vegetables">
-          <div class="cat-title">Vegetables</div>
+        <a class="card" href="/products.html#vegetables">
+          <img src="/assets/icons/vegetable.png" alt="" class="card-icon">
+          <div class="card-title">Vegetables</div>
         </a>
-
-        <a class="category-card" href="/products.html#staples">
-          <img src="/assets/icons/wheat.png" alt="Staples">
-          <div class="cat-title">Staples</div>
+        <a class="card" href="/products.html#staples">
+          <img src="/assets/icons/wheat.png" alt="" class="card-icon">
+          <div class="card-title">Staples & Pulses</div>
         </a>
-
-        <a class="category-card" href="/products.html#meat">
-          <img src="/assets/icons/meat.png" alt="Meat">
-          <div class="cat-title">Meat & Fish</div>
+        <a class="card" href="/products.html#meat">
+          <img src="/assets/icons/meat.png" alt="" class="card-icon">
+          <div class="card-title">Meat & Fish</div>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Quick contact/enquiry CTA -->
-  <section class="section cta">
-    <div class="container cta-inner">
-      <div>
-        <h3>Want to enquire?</h3>
-        <p>Send product requirements — our team will respond within one working day.</p>
+    <!-- Short staples sample -->
+    <section class="container sample-products">
+      <h2>Staples & pulses</h2>
+      <p class="muted">Key dry lines supplied in bulk for packing and distribution.</p>
+      <div class="grid products-grid" id="staples-sample">
+        <article class="product-card">
+          <img src="/assets/products/staples/basmati-rice.jpg" alt="Basmati rice">
+          <div class="product-name">Basmati rice</div>
+        </article>
+        <article class="product-card">
+          <img src="/assets/products/staples/non-basmati-rice.jpg" alt="Non-Basmati milled rice">
+          <div class="product-name">Non-Basmati milled rice</div>
+        </article>
+        <article class="product-card">
+          <img src="/assets/products/staples/wheat.jpg" alt="Wheat">
+          <div class="product-name">Wheat</div>
+        </article>
+        <article class="product-card">
+          <img src="/assets/products/staples/millets.jpg" alt="Millets">
+          <div class="product-name">Millets</div>
+        </article>
+        <article class="product-card">
+          <img src="/assets/products/staples/tamarind.jpg" alt="Tamarind">
+          <div class="product-name">Tamarind</div>
+        </article>
       </div>
-      <div>
-        <a href="/contact.html" class="btn gradient">Send an Enquiry</a>
+
+      <p class="right"><a href="/products.html#staples" class="btn-outline">Enquire for staples</a></p>
+    </section>
+
+    <!-- Contact / Enquiry small form -->
+    <section class="container contact-cta">
+      <div class="grid two-col">
+        <div>
+          <h2>Send an enquiry</h2>
+          <p>Share your product requirements — our team will respond within one working day.</p>
+
+          <form id="enquiryForm" class="enquiry-form">
+            <div class="form-row">
+              <label for="name">Your name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div class="form-row">
+              <label for="company">Company</label>
+              <input id="company" name="company" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-row">
+              <label for="role">Buyer or supplier?</label>
+              <select id="role" name="role">
+                <option>Buyer</option>
+                <option>Supplier</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirement or product range" required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Send message</button>
+              <span id="formStatus" class="muted small"></span>
+            </div>
+          </form>
+        </div>
+
+        <aside>
+          <h3>Business details</h3>
+          <p><strong>Exponab</strong><br>Dubai, United Arab Emirates<br>Email: <a href="mailto:info@exponab.com">info@exponab.com</a></p>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-col">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
-        <p class="muted">Dubai-based import & export trading company specialising in fruits, vegetables and food staples.</p>
+      <div class="footer-left">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo" />
+        <p class="muted">Dubai-based import & export trading company specialising in fruits, vegetables and related food products.</p>
       </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><img src="/assets/icons/phone.png" alt="" class="icon-inline"> Dubai, United Arab Emirates</p>
-        <p><img src="/assets/icons/social-media.png" class="icon-inline"> Email: info@exponab.com (placeholder)</p>
-      </div>
-
-      <div class="footer-col">
+      <div class="footer-links">
         <h4>Quick links</h4>
-        <ul class="footer-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/products.html">Products</a></li>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Dubai, United Arab Emirates<br>Email: <a href="mailto:info@exponab.com">info@exponab.com</a></p>
+      </div>
     </div>
-    <div class="site-copyright container">
-      © 2025 Exponab. All rights reserved.
+    <div class="footer-bottom">
+      <div class="container">© 2025 Exponab. All rights reserved.</div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
