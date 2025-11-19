@@ -1,80 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products — Exponab</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <div class="logo-wrap">
-        <img src="assets/logo/exponab-logo.png" alt="Exponab" class="logo" id="siteLogo2">
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <nav class="nav">
+      <a class="nav-logo" href="index.html"><img src="assets/logo/exponab-logo.png" alt="Exponab"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-hidden="true">☰</button>
+    </nav>
   </header>
 
-  <main class="products-page">
-    <section class="products-hero">
-      <h1>Products</h1>
-      <p>Our product portfolio — click a category to jump to its items.</p>
-      <div class="product-category-nav">
-        <a href="#fruits">Fruits</a>
-        <a href="#vegetables">Vegetables</a>
-        <a href="#staples">Staples</a>
-        <a href="#meat">Meat & Fish</a>
-      </div>
-    </section>
+  <main class="container">
+    <h1 id="page-title">Products</h1>
+    <p class="lead">Everything is shown by enquiry — click a product to open details or use the Enquire button.</p>
 
-    <section id="fruits" class="product-section">
-      <h2>Fruits</h2>
-      <div class="product-grid" id="fruitsGrid"></div>
-    </section>
+    <!-- Product navigation anchors -->
+    <div class="product-nav">
+      <a href="#fruits">Fruits</a>
+      <a href="#vegetables">Vegetables</a>
+      <a href="#staples">Staples</a>
+      <a href="#meat">Meat</a>
+      <a href="#fish">Fish</a>
+    </div>
 
-    <section id="vegetables" class="product-section">
-      <h2>Vegetables</h2>
-      <div class="product-grid" id="vegetablesGrid"></div>
-    </section>
-
-    <section id="staples" class="product-section">
-      <h2>Staples & Pulses</h2>
-      <div class="product-grid" id="staplesGrid"></div>
-    </section>
-
-    <section id="meat" class="product-section">
-      <h2>Meat & Fish</h2>
-      <div class="product-grid" id="meatGrid"></div>
-    </section>
+    <!-- Product containers inserted via JS -->
+    <div id="products-root"></div>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <img src="assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
-        <p>Dubai-based import & export trading company.</p>
-      </div>
-      <div>
-        <h4>Quick links</h4>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Email: <a href="mailto:info@exponab.com">info@exponab.com</a></p>
+  <footer class="site-footer minimal">
+    <div class="container">
+      <div class="footer-small">
+        <img src="assets/logo/exponab-logo.png" alt="Exponab">
+        <p>© 2025 Exponab</p>
       </div>
     </div>
-    <div class="bottom-note">© 2025 Exponab. All rights reserved.</div>
   </footer>
 
   <script src="script.js" defer></script>
