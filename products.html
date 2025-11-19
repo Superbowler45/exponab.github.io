@@ -4,123 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products — Exponab</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
+<body class="site">
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="brand-logo">
-        <div class="brand-text">Exponab</div>
-      </div>
-
+      <a class="brand" href="/index.html">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" id="site-logo">
+      </a>
       <nav class="main-nav">
-        <a href="/index.html" class="nav-link">Home</a>
-        <a href="/products.html" class="nav-link active">Products</a>
-        <a href="/contact.html" class="nav-link">Contact</a>
+        <a href="/index.html">Home</a>
+        <a href="/products.html" class="active">Products</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <div class="container">
+    <section class="container">
       <h1 id="fruits">Fruits</h1>
-      <p class="muted">Key fresh-fruit lines we trade — images are sample placeholders.</p>
-
-      <div class="products-grid">
-        <!-- product card examples - update image names to match your uploads -->
+      <p class="muted">Fresh fruits we source and supply.</p>
+      <div class="grid products-grid">
+        <!-- example card -->
         <article class="product-card">
           <img src="/assets/products/fruits/pomegranate.png" alt="Pomegranate">
-          <h3>Pomegranate</h3>
-          <p class="small muted">Available from multiple origins. MOQ: enquire.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <div class="product-name">Pomegranate</div>
         </article>
 
         <article class="product-card">
-          <img src="/assets/products/fruits/green-grapes.png" alt="Green grapes">
-          <h3>Green Grapes</h3>
-          <p class="small muted">Seedless varieties available.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <img src="/assets/products/fruits/green-grapes.png" alt="Green Grapes">
+          <div class="product-name">Grapes (Green)</div>
         </article>
 
-        <article class="product-card">
-          <img src="/assets/products/fruits/black-grapes.png" alt="Black grapes">
-          <h3>Black Grapes</h3>
-          <p class="small muted">Table grapes for export.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
-        </article>
-        <!-- add more fruit cards (copy the article block) -->
+        <!-- add more product cards using image paths -->
       </div>
 
       <h2 id="vegetables">Vegetables</h2>
-      <div class="products-grid">
+      <div class="grid products-grid">
         <article class="product-card">
           <img src="/assets/products/vegetables/onion.png" alt="Onion">
-          <h3>Onion</h3>
-          <p class="small muted">Yellow and white onions — bulk supply.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <div class="product-name">Onion</div>
         </article>
         <article class="product-card">
-          <img src="/assets/products/vegetables/green-chilli.png" alt="Green chilli">
-          <h3>Green chilli</h3>
-          <p class="small muted">Hot and mild varieties.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <img src="/assets/products/vegetables/green-chilli.png" alt="Green Chilli">
+          <div class="product-name">Green Chilli</div>
         </article>
       </div>
 
-      <h2 id="staples">Staples & pulses</h2>
-      <div class="products-grid">
+      <h2 id="staples">Staples & Pulses</h2>
+      <div class="grid products-grid">
         <article class="product-card">
-          <img src="/assets/products/staples/basmati-rice.jpg" alt="Basmati rice">
-          <h3>Basmati rice</h3>
-          <p class="small muted">Premium long-grain basmati.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <img src="/assets/products/staples/turmeric.jpg" alt="Turmeric">
+          <div class="product-name">Turmeric</div>
         </article>
         <article class="product-card">
-          <img src="/assets/products/staples/wheat.jpg" alt="Wheat">
-          <h3>Wheat</h3>
-          <p class="small muted">Bulk milling wheat.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
-        </article>
-        <article class="product-card">
-          <img src="/assets/products/staples/millets.jpg" alt="Millets">
-          <h3>Millets</h3>
-          <p class="small muted">Sorghum, pearl millet etc.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <img src="/assets/products/staples/ba s mati-rice.jpg" alt="Rice">
+          <div class="product-name">Rice</div>
         </article>
       </div>
 
       <h2 id="meat">Meat & Fish</h2>
-      <div class="products-grid">
+      <div class="grid products-grid">
         <article class="product-card">
           <img src="/assets/products/meat/chicken.jpg" alt="Chicken">
-          <h3>Chicken</h3>
-          <p class="small muted">Frozen whole birds and cuts.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
-        </article>
-        <article class="product-card">
-          <img src="/assets/products/meat/mutton.jpg" alt="Mutton">
-          <h3>Mutton</h3>
-          <p class="small muted">Halal, export-quality carcasses.</p>
-          <a class="btn outline" href="/contact.html">Enquire</a>
+          <div class="product-name">Chicken</div>
         </article>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-col">
-        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo">
+      <div class="footer-left">
+        <img src="/assets/logo/exponab-logo.png" alt="Exponab" class="footer-logo" />
         <p class="muted">Dubai-based import & export trading company.</p>
       </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>Email: info@exponab.com (placeholder)</p>
-      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© 2025 Exponab. All rights reserved.</div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
